@@ -19,12 +19,8 @@ def insert_sort(array):
     for i in range(1, n):
         value = array[i]
         j = i-1
-        while j >= 0:
-            if array[j] > value:
-                array[j+1] = array[j]
-                # array[j] = value
-            else:
-                break
+        while j >= 0 and array[j] > value:
+            array[j+1] = array[j]
             j -= 1
             print("j: ", j)
         array[j+1] = value
