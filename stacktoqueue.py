@@ -72,6 +72,49 @@ class MyQueue(object):
         """
         return self.stack1 == [] and self.stack2 == []
 
+
+class MyStack(object):
+    def __init__(self):
+        self.queue1 = []
+        self.queue2 = []
+
+    def push(self, x):
+        """
+        Push element to the top of the stack
+        :param x: int
+        :return: None
+        """
+        self.queue1.append(x)
+
+    def pop(self):
+        """
+        Pop the top element of the stack
+        :return: the top element
+        """
+        _long = len(self.queue1)
+        _top = self.queue1[_long-1]
+        for i in range(_long-1):
+            self.queue2.append(self.queue1[i])
+            _long -= 1
+        self.queue1 = self.queue2
+        self.queue2 = []
+        return _top
+
+    def top(self):
+        """
+        :return: top element of the stack
+        """
+        _long = len(self.queue1)
+        _top = self.queue1[_long-1]
+        return _top
+
+    def empty(self):
+        """
+        Returns whether the stack is empty
+        :return:Bool value True/False
+        """
+        return self.queue1 == []
+
 # Your MyQueue object will be instantiated and called as such:
 
 
