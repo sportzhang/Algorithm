@@ -6,3 +6,6 @@ As we all konw,algorithm is so important that every computer programer must get 
 
 # How to use?
 The file in this project just named with the precise name of the algorithm,so you can find the algorithm very easy.And hope that you can give me advice if you have better or different idea.And the license is free.
+
+# Attention
+If you have better solutions, welcome talk about.
