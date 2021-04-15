@@ -45,11 +45,16 @@ class Solution(object):
             slow = slow.next
             fast = fast.next.next if fast.next is not None else fast.next
 
-        # 链表反转部分
+        # 链表反转部分,注意这里就是对链表的后半部分进行翻转，
         while slow is not None:
+            '''
+            上面完成快慢指针的移动后，prev=None,此时令slow.next=prev,就相当于后半部分链表的第一个节点指向None，
+            slow变成slow.next，就是后半部分第二个节点，prev=slow,
+            这样，下一轮再进行赋值，slow.next=prev,第二个就反过来指向第一个节点。
+            '''
             slow.next, slow, prev = prev, slow.next, slow
 
-        # 前后两部分比较
+        # 前后两部分比较，此时的prev是后半部分翻转后的第一个节点，头结点
         while head and prev:
             if head.val != prev.val:
                 return False
