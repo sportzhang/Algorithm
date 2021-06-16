@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # -*-coding: utf-8 -*-
 # Definition for singly-linked list.
 
@@ -8,14 +9,29 @@ class DBListNode(object):
         self.val = y
         self.prev = None
         self.next = None
+=======
+# -*- coding: utf-8 -*-
+# Definition for singly-linked list.
+
+
+class DbListNode(object):
+    def __init__(self, x, y):
+        self.key = x
+        self.val = y
+        self.next = None
+        self.prev = None
+>>>>>>> 50dc4cf3ab95f8c900bba70d59b8d54f8e72b5db
 
 
 class LRUCache:
     """
+<<<<<<< HEAD
     实现本题的两种操作，需要用到一个哈希表和一个双向链表。在面试中，面试官一般会期望读者能够自己实现一个简单的双向链表，而不是使用语言自带的、封装好的数据结构。
     在 Python 语言中，有一种结合了哈希表与双向链表的数据结构 OrderedDict，只需要短短的几行代码就可以完成本题。在 Java 语言中，同样有类似的数据结构 LinkedHashMap。
     链接：https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/
 
+=======
+>>>>>>> 50dc4cf3ab95f8c900bba70d59b8d54f8e72b5db
     leet code: 146
         运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。
         它应该支持以下操作： 获取数据 get 和 写入数据 put 。
@@ -30,18 +46,31 @@ class LRUCache:
     def __init__(self, capacity):
         self.cap = capacity
         self.hkeys = {}
+<<<<<<< HEAD
         # self.top, self.tail作为哨兵节点，也就是伪头部和伪尾部
         self.top = DBListNode(None, -1)
         self.tail = DBListNode(None, -1)
+=======
+        self.top = DbListNode(None, -1)
+        self.tail = DbListNode(None, -1)
+>>>>>>> 50dc4cf3ab95f8c900bba70d59b8d54f8e72b5db
         self.top.next = self.tail
         self.tail.prev = self.top
 
     def get(self, key):
         if key in self.hkeys.keys():
+<<<<<<< HEAD
             cur = self.hkeys[key]  # 先找到节点
             # 跳出原位置
             cur.next.prev = cur.prev  # 将cur下一个节点的prev指向cur的上一个节点
             cur.prev.next = cur.next  # 将cur上一个节点的next指向cur的下一个节点
+=======
+            # 更新节点数据
+            cur = self.hkeys[key]
+            # 跳出原位置
+            cur.next.prev = cur.prev  # 将cur下一个节点的prev指向cur的上一个节点
+            cur.prev.next = cur.next  # cur的上一个节点的next指向cur的下一个节点
+>>>>>>> 50dc4cf3ab95f8c900bba70d59b8d54f8e72b5db
             # 最近用过的置于链表首部
             top_node = self.top.next
             self.top.next = cur
@@ -51,6 +80,7 @@ class LRUCache:
 
             return self.hkeys[key].val
         return -1
+<<<<<<< HEAD
 
     def put(self, key, value):
         if key in self.hkeys.keys():
@@ -132,3 +162,6 @@ if __name__ == '__main__':
     cache.get(4)
     print(cache)
 
+=======
+    
+>>>>>>> 50dc4cf3ab95f8c900bba70d59b8d54f8e72b5db
